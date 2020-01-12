@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class Pie: UIView{
+    var startTimeHr: Int16?
     var radius: CGFloat?
     var startAngle: CGFloat?
     var endAngle: CGFloat?
@@ -19,10 +20,11 @@ class Pie: UIView{
     
     var nameLabel: UILabel?
     
-    init(frameSuper: CGRect, radius: CGFloat, startAngle: CGFloat, endAngle: CGFloat, centerPoint: CGPoint, color: UIColor, name: String) {
+    init(frameSuper: CGRect, startTimeHr:Int16, radius: CGFloat, startAngle: CGFloat, endAngle: CGFloat, centerPoint: CGPoint, color: UIColor, name: String) {
         
         super.init(frame: frameSuper)
         
+        self.startTimeHr = startTimeHr
         self.radius = radius
         self.startAngle = startAngle
         self.endAngle = endAngle
@@ -30,15 +32,23 @@ class Pie: UIView{
         self.color = color
         self.name = name
         
-        let angle_temp = startAngle + (endAngle - startAngle)/2.0
-        let labelAnglePosition = 90.0 - angle_temp + 360.0
-        print(name)
-        print(angle_temp)
-        print(labelAnglePosition)
-        let lablePositionX = centerPoint.x - (radius/2.0) * cos(labelAnglePosition.degreesToRadians)
-        let lablePositionY = centerPoint.y - (radius/2.0) * sin(labelAnglePosition.degreesToRadians)
+        var midAngle:CGFloat = 0.0
         
-        let nameLabel = UILabel(frame: CGRect(x: lablePositionX, y: lablePositionY, width: frameSuper.width/2.0, height: frameSuper.height/5.0))
+        if(endAngle < startAngle){
+
+            midAngle = ((startAngle - 360.0) + endAngle)/2.0
+        }
+        else{
+            midAngle = startAngle + (endAngle - startAngle)/2.0}
+        
+        let labelAnglePosition = 90.0 - midAngle + 360.0
+//        print(name)
+//        print(self.frame.width)
+//        print(self.frame.height)
+        let lablePositionX = centerPoint.x + (radius*2.0/3.0) * cos(labelAnglePosition.degreesToRadians)
+        let lablePositionY = centerPoint.y - (radius*2.0/3.0) * sin(labelAnglePosition.degreesToRadians)
+        
+        let nameLabel = UILabel(frame: CGRect(x: lablePositionX - frameSuper.width/4.0, y: lablePositionY - frameSuper.height/10.0, width: frameSuper.width/2.0, height: frameSuper.height/5.0))
         nameLabel.text = name
         nameLabel.textAlignment = .center
         nameLabel.textColor = UIColor.white
@@ -46,6 +56,7 @@ class Pie: UIView{
         
         self.addSubview(nameLabel)
         self.backgroundColor = UIColor.clear
+        
     }
     
     required init?(coder: NSCoder) {
@@ -63,6 +74,7 @@ class Pie: UIView{
         midPath.fill()
         
     }
+
 }
 
 extension CGFloat {

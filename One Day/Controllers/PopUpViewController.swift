@@ -36,6 +36,7 @@ class PopUpViewController: UIViewController{
     var pieColor: UIColor = UIColor.red
     
     var delegate: ModalDelegate?
+    var scheduleDelegate: ScheduleDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,32 +61,28 @@ class PopUpViewController: UIViewController{
     @IBAction func saveBtn(_ sender: Any) {
         
         readCurrentTIme()
-        let title = "Invalid Input"
-        let message1 = "Please enter valid time."
-        let message2 = "Please enter a name."
-
+        eventName = nameTxtField.text!
         // Create the dialog
 
         if (nameTxtField.text == ""){
             
-            let popup = PopupDialog(title: title, message: message2)
-            popup.addButtons([DefaultButton(title: "Dismiss", dismissOnTap: true) {}])
-            self.present(popup, animated: true, completion: nil)
+            let alert = UIAlertController(title: "Invalid Input", message: "Please enter a name for event.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
         
         else if (startTimeHr == endTimeHr) && (startTimeMin == endTimeMin){
-            
-            let popup = PopupDialog(title: title, message: message1)
-            popup.addButtons([DefaultButton(title: "Dismiss", dismissOnTap: true) {}])
-            self.present(popup, animated: true, completion: nil)
+ 
+            let alert = UIAlertController(title: "Invalid Input", message: "Please enter valid time.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
+            
         else{
         if delegate!.isEditPopup{
             delegate!.deleteEventByDeletage()
         }
-        
 
-        
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
           return
         }
@@ -101,7 +98,9 @@ class PopUpViewController: UIViewController{
         newEvent.setValue(pieColor.redValue, forKey: "pieColorR")
         newEvent.setValue(pieColor.greenValue, forKey: "pieColorG")
         newEvent.setValue(pieColor.blueValue, forKey: "pieColorB")
-        
+        newEvent.setValue(scheduleDelegate?.parentTitle, forKey: "parentScheduleTitle")
+        newEvent.setValue(scheduleDelegate?.parentDate, forKey: "parentScheduleDate")
+            
         do {
           try managedContext.save()
         } catch let error as NSError {

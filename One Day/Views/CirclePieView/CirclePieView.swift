@@ -30,13 +30,11 @@ class CirclePieView: UIView{
         nib.instantiate(withOwner: self, options: nil)
         viewFrame.frame = bounds
         addSubview(viewFrame)
-        
-        //create base circle
 
     }
     
-    func addNewSchedule(startTime: Float, endTime: Float, pieColor: UIColor, name: String){
-        let newSchedule = Pie(frameSuper: viewFrame.frame, radius: viewFrame.frame.width/2, startAngle: CGFloat(360.0*startTime/24.0), endAngle: CGFloat(360.0*endTime/24.0), centerPoint: CGPoint(x: frame.width/2, y: frame.height/2), color: pieColor, name: name)
+    func addNewSchedule(startTimeHrParam: Int16, startTime: Float, endTime: Float, pieColor: UIColor, name: String){
+        let newSchedule = Pie(frameSuper: viewFrame.frame, startTimeHr: startTimeHrParam, radius: viewFrame.frame.width/2, startAngle: CGFloat(360.0*startTime/24.0), endAngle: CGFloat(360.0*endTime/24.0), centerPoint: CGPoint(x: frame.width/2, y: frame.height/2), color: pieColor, name: name)
         
         //print(String(format:"float: %f  angle: %f", startTime, CGFloat(360.0*startTime/24.0)))
         

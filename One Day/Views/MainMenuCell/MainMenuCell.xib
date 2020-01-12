@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainMenuCell" rowHeight="130" id="VC0-Cg-djt" customClass="MainMenuCell" customModule="One_Day" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VC0-Cg-djt" id="z7v-ui-MS7">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R8w-NN-XlQ" userLabel="circlepieview" customClass="CirclePieView" customModule="One_Day" customModuleProvider="target">
+                        <rect key="frame" x="20" y="20" width="90" height="90"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="R8w-NN-XlQ" secondAttribute="height" multiplier="1:1" id="mGQ-WF-SfJ"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xf2-gA-zj5">
+                        <rect key="frame" x="327.5" y="27.5" width="66.5" height="33.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                        <color key="textColor" red="0.75294117650000003" green="0.42352941179999998" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31b-Hk-XPr">
+                        <rect key="frame" x="337" y="81" width="57" height="29"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="xf2-gA-zj5" secondAttribute="trailing" constant="20" id="84u-r2-EGI"/>
+                    <constraint firstItem="R8w-NN-XlQ" firstAttribute="top" secondItem="z7v-ui-MS7" secondAttribute="top" constant="20" id="AIl-0S-rmX"/>
+                    <constraint firstItem="31b-Hk-XPr" firstAttribute="trailing" secondItem="z7v-ui-MS7" secondAttribute="trailingMargin" id="Z3U-Eh-Ct9"/>
+                    <constraint firstAttribute="bottom" secondItem="R8w-NN-XlQ" secondAttribute="bottom" constant="20" id="cej-EF-su1"/>
+                    <constraint firstItem="31b-Hk-XPr" firstAttribute="top" secondItem="xf2-gA-zj5" secondAttribute="bottom" constant="20" id="eov-TA-s1f"/>
+                    <constraint firstItem="31b-Hk-XPr" firstAttribute="bottom" secondItem="R8w-NN-XlQ" secondAttribute="bottom" id="ihV-9C-vhJ"/>
+                    <constraint firstItem="R8w-NN-XlQ" firstAttribute="leading" secondItem="z7v-ui-MS7" secondAttribute="leading" constant="20" id="xSk-oq-qk1"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="date" destination="31b-Hk-XPr" id="o2S-Ms-RPa"/>
+                <outlet property="thumbnail" destination="R8w-NN-XlQ" id="z7S-nI-4by"/>
+                <outlet property="title" destination="xf2-gA-zj5" id="ghc-k4-YyW"/>
+            </connections>
+            <point key="canvasLocation" x="44.927536231884062" y="249.77678571428569"/>
+        </tableViewCell>
+    </objects>
+</document>

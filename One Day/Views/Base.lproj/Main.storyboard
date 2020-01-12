@@ -31,11 +31,15 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="ONE DAY" id="YK0-u4-9T8">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="Dqg-ru-umO">
-                            <connections>
-                                <action selector="AddBtnPressed:" destination="FMR-K7-aYI" id="BQj-X8-4XN"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="info.circle" catalog="system" style="plain" id="cJy-Gl-Rad"/>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="plus" catalog="system" id="Dqg-ru-umO">
+                                <connections>
+                                    <action selector="AddBtnPressed:" destination="FMR-K7-aYI" id="BQj-X8-4XN"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem style="plain" systemItem="edit" id="QGY-QC-8rG"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <segue destination="7Bc-ps-Asr" kind="show" identifier="goToSchedule" id="j2U-v3-3Wa"/>
@@ -146,69 +150,96 @@
                                     <constraint firstAttribute="height" constant="240" id="tDB-W9-o7x"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tsI-qb-N4U" customClass="CirclePieView" customModule="One_Day" customModuleProvider="target">
-                                <rect key="frame" x="57" y="222" width="300" height="300"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w1C-4n-08u">
+                                <rect key="frame" x="0.0" y="128" width="414" height="33"/>
+                                <color key="textColor" red="0.75294117650000003" green="0.42352941179999998" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="28"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ERu-IU-BRj" userLabel="clock view">
+                                <rect key="frame" x="17" y="191" width="380" height="380"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4W-sd-ohf">
+                                        <rect key="frame" x="345" y="175" width="12" height="30"/>
+                                        <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVn-yl-cey">
+                                        <rect key="frame" x="178.66666666666666" y="345" width="23" height="30"/>
+                                        <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aB-oS-btN">
+                                        <rect key="frame" x="12" y="175" width="23" height="30"/>
+                                        <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYH-7p-yRS">
+                                        <rect key="frame" x="178.66666666666666" y="10" width="23" height="30"/>
+                                        <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tsI-qb-N4U" customClass="CirclePieView" customModule="One_Day" customModuleProvider="target">
+                                        <rect key="frame" x="40" y="40" width="300" height="300"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="KI3-Xe-kAz"/>
+                                            <constraint firstAttribute="width" constant="300" id="Saw-GA-59c"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="KI3-Xe-kAz"/>
-                                    <constraint firstAttribute="width" constant="300" id="Saw-GA-59c"/>
+                                    <constraint firstAttribute="height" constant="380" id="09I-9T-nXX"/>
+                                    <constraint firstItem="tsI-qb-N4U" firstAttribute="centerX" secondItem="ERu-IU-BRj" secondAttribute="centerX" id="4OP-a6-yj6"/>
+                                    <constraint firstItem="tsI-qb-N4U" firstAttribute="leading" secondItem="6aB-oS-btN" secondAttribute="trailing" constant="5" id="CfN-5P-mAn"/>
+                                    <constraint firstItem="tsI-qb-N4U" firstAttribute="centerY" secondItem="ERu-IU-BRj" secondAttribute="centerY" id="RDp-jL-2Yl"/>
+                                    <constraint firstItem="g4W-sd-ohf" firstAttribute="centerY" secondItem="ERu-IU-BRj" secondAttribute="centerY" id="UCI-zW-B83"/>
+                                    <constraint firstItem="hVn-yl-cey" firstAttribute="top" secondItem="tsI-qb-N4U" secondAttribute="bottom" constant="5" id="a6c-Eq-ylg"/>
+                                    <constraint firstAttribute="width" constant="380" id="cJD-Lh-a7P"/>
+                                    <constraint firstItem="gYH-7p-yRS" firstAttribute="centerX" secondItem="ERu-IU-BRj" secondAttribute="centerX" id="jzT-Mg-iFb"/>
+                                    <constraint firstItem="6aB-oS-btN" firstAttribute="centerY" secondItem="ERu-IU-BRj" secondAttribute="centerY" id="txA-0F-B9l"/>
+                                    <constraint firstItem="g4W-sd-ohf" firstAttribute="leading" secondItem="tsI-qb-N4U" secondAttribute="trailing" constant="5" id="uHJ-yG-1z0"/>
+                                    <constraint firstItem="hVn-yl-cey" firstAttribute="centerX" secondItem="ERu-IU-BRj" secondAttribute="centerX" id="wUP-cF-a4W"/>
+                                    <constraint firstItem="tsI-qb-N4U" firstAttribute="top" secondItem="gYH-7p-yRS" secondAttribute="bottom" id="x4A-r4-Uod"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IMPORTANT DAY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lbi-YE-5h2">
-                                <rect key="frame" x="110" y="129.33333333333334" width="194" height="32.666666666666657"/>
-                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="28"/>
-                                <color key="textColor" red="0.75294117647058822" green="0.42352941176470588" blue="0.51764705882352935" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYH-7p-yRS">
-                                <rect key="frame" x="196" y="184" width="23" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="30"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aB-oS-btN">
-                                <rect key="frame" x="26" y="357" width="23" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="30"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4W-sd-ohf">
-                                <rect key="frame" x="365" y="357" width="12" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="30"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVn-yl-cey">
-                                <rect key="frame" x="196" y="530" width="23" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="30"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.90196078431372551" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="tsI-qb-N4U" firstAttribute="top" secondItem="Lbi-YE-5h2" secondAttribute="bottom" constant="60" id="0tJ-cd-6ox"/>
-                            <constraint firstItem="Lbi-YE-5h2" firstAttribute="centerX" secondItem="YpL-Fq-acJ" secondAttribute="centerX" id="38z-jW-Wtk"/>
+                            <constraint firstItem="ERu-IU-BRj" firstAttribute="centerX" secondItem="YpL-Fq-acJ" secondAttribute="centerX" id="2Ce-kl-ReP"/>
                             <constraint firstItem="KnM-36-8za" firstAttribute="bottom" secondItem="ODG-hB-rGp" secondAttribute="bottom" constant="40" id="3vF-Gy-2E4"/>
-                            <constraint firstItem="tsI-qb-N4U" firstAttribute="centerX" secondItem="YpL-Fq-acJ" secondAttribute="centerX" id="dzZ-5a-DVx"/>
-                            <constraint firstItem="ODG-hB-rGp" firstAttribute="top" secondItem="tsI-qb-N4U" secondAttribute="bottom" constant="60" id="l29-K4-rnM"/>
+                            <constraint firstItem="w1C-4n-08u" firstAttribute="top" secondItem="KnM-36-8za" secondAttribute="top" constant="40" id="GdR-4P-auI"/>
+                            <constraint firstItem="ERu-IU-BRj" firstAttribute="top" secondItem="w1C-4n-08u" secondAttribute="bottom" constant="30" id="KLu-KG-xyc"/>
+                            <constraint firstItem="w1C-4n-08u" firstAttribute="leading" secondItem="KnM-36-8za" secondAttribute="leading" id="MN2-cq-lQV"/>
+                            <constraint firstItem="w1C-4n-08u" firstAttribute="centerX" secondItem="YpL-Fq-acJ" secondAttribute="centerX" id="Wkn-Nm-oBR"/>
+                            <constraint firstItem="w1C-4n-08u" firstAttribute="trailing" secondItem="KnM-36-8za" secondAttribute="trailing" id="eng-0e-QpB"/>
                             <constraint firstItem="ODG-hB-rGp" firstAttribute="centerX" secondItem="YpL-Fq-acJ" secondAttribute="centerX" id="zuE-3P-Mce"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KnM-36-8za"/>
                     </view>
                     <navigationItem key="navigationItem" id="riu-aW-Asa">
                         <rightBarButtonItems>
-                            <barButtonItem image="bell" catalog="system" style="plain" id="u6z-SB-weV"/>
-                            <barButtonItem style="plain" systemItem="save" id="PQZ-YC-wzz"/>
+                            <barButtonItem image="bell" catalog="system" style="plain" id="u6z-SB-weV">
+                                <connections>
+                                    <action selector="alarmBtnPressed:" destination="7Bc-ps-Asr" id="R3a-ca-J0k"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem style="plain" systemItem="save" id="PQZ-YC-wzz">
+                                <connections>
+                                    <action selector="saveBtnPressed:" destination="7Bc-ps-Asr" id="iRY-Vm-xtK"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="addBtn" destination="pLt-Hc-foS" id="fOV-NK-9zv"/>
                         <outlet property="circleView" destination="tsI-qb-N4U" id="XO7-zB-Bky"/>
+                        <outlet property="clockView" destination="ERu-IU-BRj" id="iRA-wq-T7O"/>
                         <outlet property="collapseBtn" destination="89H-Cg-wr3" id="eid-Ca-n2l"/>
                         <outlet property="editBtn" destination="45n-zX-BiE" id="nNR-q1-pYg"/>
                         <outlet property="eventList" destination="UlP-0v-UWN" id="1zK-K9-CLs"/>
@@ -216,6 +247,7 @@
                         <outlet property="removeItemBtn" destination="ACr-kn-Zhx" id="zzU-9f-uVO"/>
                         <outlet property="scheduleList" destination="ODG-hB-rGp" id="3t8-Et-ybr"/>
                         <outlet property="scheduleListInner" destination="bF9-ie-ByG" id="uyc-8q-RJB"/>
+                        <outlet property="titletextfield" destination="w1C-4n-08u" id="ogd-tJ-9Ik"/>
                         <segue destination="lsf-Sc-DEw" kind="presentation" identifier="addNewItem" customClass="AlwaysPopupSegue" customModule="One_Day" customModuleProvider="target" id="Yt8-7h-UPH"/>
                     </connections>
                 </viewController>
@@ -542,6 +574,7 @@
         <image name="bell" catalog="system" width="64" height="62"/>
         <image name="chevron.compact.up" catalog="system" width="64" height="20"/>
         <image name="chevron.down" catalog="system" width="64" height="36"/>
+        <image name="info.circle" catalog="system" width="64" height="60"/>
         <image name="plus" catalog="system" width="64" height="56"/>
         <image name="square.fill" catalog="system" width="64" height="56"/>
         <image name="trash" catalog="system" width="60" height="64"/>

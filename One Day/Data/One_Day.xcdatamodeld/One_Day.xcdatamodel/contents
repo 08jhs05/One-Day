@@ -4,13 +4,22 @@
         <attribute name="endTimeHr" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="endTimeMin" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="parentScheduleDate" optional="YES" attributeType="String"/>
+        <attribute name="parentScheduleTitle" optional="YES" attributeType="String"/>
         <attribute name="pieColorB" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="pieColorG" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="pieColorR" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="startTimeHr" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="startTimeMin" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="schedule" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Schedule" inverseName="event" inverseEntity="Schedule"/>
+    </entity>
+    <entity name="Schedule" representedClassName="Schedule" syncable="YES" codeGenerationType="class">
+        <attribute name="dateCreated" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="schedule" inverseEntity="Event"/>
     </entity>
     <elements>
-        <element name="Event" positionX="-63" positionY="-18" width="128" height="163"/>
+        <element name="Event" positionX="-63" positionY="-18" width="128" height="208"/>
+        <element name="Schedule" positionX="-63" positionY="45" width="128" height="88"/>
     </elements>
 </model>

@@ -30,9 +30,10 @@ class DayListViewController: UITableViewController, ScheduleDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.rightBarButtonItems![1] = editButtonItem
         tableView.register(UINib(nibName: "MainMenuCell", bundle: nil), forCellReuseIdentifier: "MainMenuCell")
         load()
-        if schedules.count == 0 { createDefaultData() }
+        if schedules.count == 0 { createNewData(title: "MY DAY") }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -87,15 +88,82 @@ class DayListViewController: UITableViewController, ScheduleDelegate{
         return 130
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            
+            let scheduleToDelete = schedules[indexPath.row]
+            
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                return
+            }
+            
+            let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Schedule")
+            
+            fetchRequest.predicate = NSPredicate(format:"(dateCreated == %@) AND (title == %@)",
+                                                 scheduleToDelete.value(forKey: "dateCreated") as! String,
+                                                 scheduleToDelete.value(forKey: "title") as! String
+            )
+            
+            let fetchRequest2 = NSFetchRequest<NSManagedObject>(entityName: "Event")
+            
+            fetchRequest2.predicate = NSPredicate(format:"(parentScheduleDate == %@) AND (parentScheduleTitle == %@)", scheduleToDelete.value(forKey: "dateCreated") as! String, scheduleToDelete.value(forKey: "title") as! String)
+            
+            let result = try? context.fetch(fetchRequest)
+            let resultData = result as! [NSManagedObject]
+            
+            let resultEvent = try? context.fetch(fetchRequest2)
+            let resultEventData = resultEvent!
+
+            for object in resultData {
+                context.delete(object)
+            }
+            
+            for object in resultEventData {
+                context.delete(object)
+            }
+
+            do {
+                try context.save()
+            } catch let error as NSError  {
+                print("Could not save \(error), \(error.userInfo)")
+            }
+            load()
+            // =====================================
+            
+            
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+    }
+    
     @IBAction func AddBtnPressed(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "New Schedule", message: "Enter a name for your schedule:", preferredStyle: .alert)
         alert.addTextField(configurationHandler: nil)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {alertinput -> Void in
+            
+            let newTitle = alert.textFields![0].text!
+            
+            if newTitle != ""{
+                self.createNewData(title: newTitle)
+                self.load()
+                self.tableView.reloadData()
+            }
+            
+        }))
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+        
     }
     
-    func createDefaultData(){
+    func createNewData(title: String){
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
           return
@@ -116,10 +184,11 @@ class DayListViewController: UITableViewController, ScheduleDelegate{
         defaultEvent.setValue(0.0, forKey: "pieColorR")
         defaultEvent.setValue(122.0/255.0, forKey: "pieColorG")
         defaultEvent.setValue(1.0, forKey: "pieColorB")
-        defaultEvent.setValue("MY DAY", forKey: "parentScheduleTitle")
+        defaultEvent.setValue(title, forKey: "parentScheduleTitle")
         
         
-        defaultSchedule.setValue("MY DAY", forKey: "title")
+        defaultSchedule.setValue(title, forKey: "title")
+        defaultSchedule.setValue(false, forKey: "isAlarmTurnedOn")
         
         let date = Date()
         let formatter = DateFormatter()

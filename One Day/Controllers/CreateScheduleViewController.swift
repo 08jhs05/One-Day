@@ -20,6 +20,12 @@ protocol ModalDelegate{
     var isEditPopup: Bool {
         get
     }
+    var selectedEventStartTime: String? {
+        get
+    }
+    var selectedEventEndTime: String? {
+        get
+    }
 }
 
 class CreateScheduleViewController: UIViewController, ModalDelegate{
@@ -53,6 +59,12 @@ class CreateScheduleViewController: UIViewController, ModalDelegate{
     var colorBeforeClicked:UIColor? = nil
     var isPieClicked = false
     
+    var selectedEventStartTime: String?
+    var selectedEventEndTime: String?
+    
+    var isAlarmTurnedOn = false
+    @IBOutlet weak var alarmBtn: UIBarButtonItem!
+    
     let originalscheduleListWidth:CGFloat = 350
     let originalscheduleListHeight:CGFloat = 240
     let collapsedscheduleListHeight:CGFloat = 40
@@ -75,6 +87,13 @@ class CreateScheduleViewController: UIViewController, ModalDelegate{
         dismisskeyboardTap.cancelsTouchesInView = false
         view.addGestureRecognizer(dismisskeyboardTap)
         self.circleView.addGestureRecognizer(dismisskeyboardTap)
+        
+        if isAlarmTurnedOn == true{
+            alarmBtn.image = UIImage(systemName: "bell.slash")
+        }
+        else {
+            alarmBtn.image = UIImage(systemName: "bell")
+        }
          
     }
     
@@ -126,7 +145,82 @@ class CreateScheduleViewController: UIViewController, ModalDelegate{
 
     }
 
-    @IBAction func alarmBtnPressed(_ sender: Any) {
+    @IBAction func alarmBtnPressed(_ sender: UIBarButtonItem) {
+        
+        let center = UNUserNotificationCenter.current()
+        
+        if isAlarmTurnedOn == false {
+
+        center.requestAuthorization(options: [.alert, .badge, .sound], completionHandler: { (granted, error) in
+            if granted {
+                
+            } else {
+                print("Notification permissions not granted")
+            }
+        })
+        
+        for event in eventsData{
+            
+            let components = DateComponents(hour: Int(event.startTimeHr!), minute: Int(event.startTimeMin!)) // Set the date here when you want Notification
+            let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
+
+            let content = UNMutableNotificationContent()
+            content.title = titleText!
+            content.body = event.eventName!
+            content.sound = UNNotificationSound.default
+
+            let request = UNNotificationRequest(
+                identifier: UUID().uuidString,
+                content: content,
+                trigger: trigger
+            )
+
+            UNUserNotificationCenter.current().add(request) { (error : Error?) in
+                if let theError = error {
+                    print(theError.localizedDescription)
+                }
+            }
+        }
+        sender.image = UIImage(systemName: "bell.slash")
+            
+        let alert = UIAlertController(title: "Alarm turned on", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+            
+            isAlarmTurnedOn = true
+        }
+            
+        else {
+            
+            center.removeAllDeliveredNotifications()
+            center.removeAllPendingNotificationRequests()
+            sender.image = UIImage(systemName: "bell")
+                
+            let alert = UIAlertController(title: "Alarm turned off", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
+            isAlarmTurnedOn = false
+        }
+        
+        // ===========================
+                guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                         return
+                       }
+                       let managedContext = appDelegate.persistentContainer.viewContext
+
+                       let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Schedule")
+
+                       fetchRequest.predicate = NSPredicate(format:"(dateCreated == %@) AND (title == %@)", (delegate?.parentDate)!, (delegate?.parentTitle)!)
+
+                       do {
+                           let fetchedData = try managedContext.fetch(fetchRequest)
+                           fetchedData[0].setValue(isAlarmTurnedOn, forKey: "isAlarmTurnedOn")
+                       } catch let error as NSError {
+                         print("Could not fetch. \(error), \(error.userInfo)")
+                       }
+                
+        // ===========================
     }
     
     @IBAction func AddBtnPressed(_ sender: Any) {
@@ -145,7 +239,11 @@ class CreateScheduleViewController: UIViewController, ModalDelegate{
         if isEditPopup{
             eventnamePassbyDelegate = eventsData[currentCellFocus].eventName
         }
-        
+        if currentCellFocus != 999{
+            self.selectedEventStartTime = String(format:"%d:%d", eventsData[currentCellFocus].startTimeHr!, eventsData[currentCellFocus].startTimeMin!)
+            self.selectedEventEndTime = String(format:"%d:%d", eventsData[currentCellFocus].endTimeHr!, eventsData[currentCellFocus].endTimeMin!)
+    
+        }
     }
     
     @IBAction func removeBtnPressed(_ sender: Any) {
@@ -188,11 +286,18 @@ class CreateScheduleViewController: UIViewController, ModalDelegate{
         let managedContext = appDelegate.persistentContainer.viewContext
         
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Event")
-        
+
         fetchRequest.predicate = NSPredicate(format:"(parentScheduleDate == %@) AND (parentScheduleTitle == %@)", (delegate?.parentDate)!, (delegate?.parentTitle)!)
         
+        let fetchRequest2 = NSFetchRequest<NSManagedObject>(entityName: "Schedule")
+
+        fetchRequest2.predicate = NSPredicate(format:"(dateCreated == %@) AND (title == %@)", (delegate?.parentDate)!, (delegate?.parentTitle)!)
+        
         do {
-          events = try managedContext.fetch(fetchRequest)
+            events = try managedContext.fetch(fetchRequest)
+            let fetchedData = try managedContext.fetch(fetchRequest2)
+            isAlarmTurnedOn = fetchedData[0].value(forKey: "isAlarmTurnedOn") as? Bool ?? false
+            
         } catch let error as NSError {
           print("Could not fetch. \(error), \(error.userInfo)")
         }

@@ -157,7 +157,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ERu-IU-BRj" userLabel="clock view">
-                                <rect key="frame" x="17" y="191" width="380" height="380"/>
+                                <rect key="frame" x="17" y="181" width="380" height="380"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4W-sd-ohf">
                                         <rect key="frame" x="345" y="175" width="12" height="30"/>
@@ -214,7 +214,7 @@
                             <constraint firstItem="ERu-IU-BRj" firstAttribute="centerX" secondItem="YpL-Fq-acJ" secondAttribute="centerX" id="2Ce-kl-ReP"/>
                             <constraint firstItem="KnM-36-8za" firstAttribute="bottom" secondItem="ODG-hB-rGp" secondAttribute="bottom" constant="40" id="3vF-Gy-2E4"/>
                             <constraint firstItem="w1C-4n-08u" firstAttribute="top" secondItem="KnM-36-8za" secondAttribute="top" constant="40" id="GdR-4P-auI"/>
-                            <constraint firstItem="ERu-IU-BRj" firstAttribute="top" secondItem="w1C-4n-08u" secondAttribute="bottom" constant="30" id="KLu-KG-xyc"/>
+                            <constraint firstItem="ERu-IU-BRj" firstAttribute="top" secondItem="w1C-4n-08u" secondAttribute="bottom" constant="20" id="KLu-KG-xyc"/>
                             <constraint firstItem="w1C-4n-08u" firstAttribute="leading" secondItem="KnM-36-8za" secondAttribute="leading" id="MN2-cq-lQV"/>
                             <constraint firstItem="w1C-4n-08u" firstAttribute="centerX" secondItem="YpL-Fq-acJ" secondAttribute="centerX" id="Wkn-Nm-oBR"/>
                             <constraint firstItem="w1C-4n-08u" firstAttribute="trailing" secondItem="KnM-36-8za" secondAttribute="trailing" id="eng-0e-QpB"/>
@@ -238,6 +238,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addBtn" destination="pLt-Hc-foS" id="fOV-NK-9zv"/>
+                        <outlet property="alarmBtn" destination="u6z-SB-weV" id="4QM-ob-SFu"/>
                         <outlet property="circleView" destination="tsI-qb-N4U" id="XO7-zB-Bky"/>
                         <outlet property="clockView" destination="ERu-IU-BRj" id="iRA-wq-T7O"/>
                         <outlet property="collapseBtn" destination="89H-Cg-wr3" id="eid-Ca-n2l"/>

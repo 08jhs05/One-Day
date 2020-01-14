@@ -54,6 +54,14 @@ class PopUpViewController: UIViewController{
         nameTxtField.text = delegate?.eventnamePassbyDelegate
         if delegate!.isEditPopup{
             AddEventTitle.text = "Edit Event"
+            
+            let dateFormatter = DateFormatter() // set locale to reliable US_POSIX
+            dateFormatter.dateFormat = "HH:mm"
+            let startDate = dateFormatter.date(from:(delegate?.selectedEventStartTime)!)
+            let endDate = dateFormatter.date(from:(delegate?.selectedEventEndTime)!)
+            
+            startTimePicker.setDate(startDate!, animated: false)
+            endTimePicker.setDate(endDate!, animated: false)
         }
         //nameTxtField.addTarget(self, action: #selector(textFieldEditingDidChange(_:)), for: UIControl.Event.editingChanged)
     }

@@ -30,7 +30,7 @@ class DayListViewController: UITableViewController, ScheduleDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItems![1] = editButtonItem
+        navigationItem.leftBarButtonItem! = editButtonItem
         tableView.register(UINib(nibName: "MainMenuCell", bundle: nil), forCellReuseIdentifier: "MainMenuCell")
         load()
         if schedules.count == 0 { createNewData(title: "MY DAY") }

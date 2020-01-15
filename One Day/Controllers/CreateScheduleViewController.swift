@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import PopupDialog
 import CoreData
 
 protocol ModalDelegate{
@@ -48,6 +47,11 @@ class CreateScheduleViewController: UIViewController, ModalDelegate{
     @IBOutlet weak var circleView: CirclePieView!
     @IBOutlet weak var clockView: UIView!
     
+    //constraints
+    
+    @IBOutlet weak var clockviewtop: NSLayoutConstraint!
+    //============
+    
     var titleText:String?
     
     var events: [NSManagedObject] = []
@@ -65,12 +69,15 @@ class CreateScheduleViewController: UIViewController, ModalDelegate{
     var isAlarmTurnedOn = false
     @IBOutlet weak var alarmBtn: UIBarButtonItem!
     
-    let originalscheduleListWidth:CGFloat = 350
-    let originalscheduleListHeight:CGFloat = 240
-    let collapsedscheduleListHeight:CGFloat = 40
+    var originalscheduleListHeight:CGFloat?
+    let collapsedscheduleListHeight:CGFloat = 40.0
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        originalscheduleListHeight = scheduleListInner.frame.height
+        
         scheduleListInner.layer.cornerRadius = 15
         eventList.delegate = self
         eventList.dataSource = self
@@ -94,7 +101,7 @@ class CreateScheduleViewController: UIViewController, ModalDelegate{
         else {
             alarmBtn.image = UIImage(systemName: "bell")
         }
-         
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -107,11 +114,19 @@ class CreateScheduleViewController: UIViewController, ModalDelegate{
     
     @IBAction func collapseBtnPressed(_ sender: Any) {
         
+        //clockviewtop.isActive = false
+        //schedulelisttop.isActive = false
+        //clockviewtop.isActive = false
+        
+        clockView.translatesAutoresizingMaskIntoConstraints = true
+        scheduleListInner.translatesAutoresizingMaskIntoConstraints = true
+        scheduleList.translatesAutoresizingMaskIntoConstraints = true
+        
         UIView.animate(withDuration: 0.5) {
             
             self.clockView.frame = CGRect(x: self.clockView.frame.origin.x, y: self.clockView.frame.origin.y + 80, width: self.clockView.frame.width, height: self.clockView.frame.height)
             
-            self.scheduleListInner.frame = CGRect( x: self.scheduleListInner.frame.origin.x, y: self.scheduleListInner.frame.origin.y + self.scheduleListInner.frame.height, width: self.originalscheduleListWidth, height: -self.collapsedscheduleListHeight)
+            self.scheduleListInner.frame = CGRect( x: self.scheduleListInner.frame.origin.x, y: self.scheduleListInner.frame.origin.y + self.scheduleListInner.frame.height, width: self.scheduleListInner.frame.width, height: -self.collapsedscheduleListHeight)
 
         }
         
@@ -126,15 +141,20 @@ class CreateScheduleViewController: UIViewController, ModalDelegate{
     
     @IBAction func ExpandBtnPressed(_ sender: Any) {
         
+        
         UIView.animate(withDuration: 0.5) {
             
             self.clockView.frame = CGRect(x: self.clockView.frame.origin.x, y: self.clockView.frame.origin.y - 80, width: self.clockView.frame.width, height: self.clockView.frame.height)
             
-            self.scheduleListInner.frame = CGRect( x: self.scheduleListInner.frame.origin.x, y: self.scheduleListInner.frame.origin.y - self.originalscheduleListHeight + self.collapsedscheduleListHeight, width: self.originalscheduleListWidth, height: self.originalscheduleListHeight)
+            self.scheduleListInner.frame = CGRect( x: self.scheduleListInner.frame.origin.x, y: self.scheduleListInner.frame.origin.y - self.originalscheduleListHeight! + self.collapsedscheduleListHeight, width: self.scheduleListInner.frame.width, height: self.originalscheduleListHeight!)
         }
         collapseBtn.isHidden = false
         addBtn.isHidden = false
         expandBtn.isHidden = true
+        
+        clockView.translatesAutoresizingMaskIntoConstraints = false
+        scheduleListInner.translatesAutoresizingMaskIntoConstraints = false
+        scheduleList.translatesAutoresizingMaskIntoConstraints = false
     }
     
     //shows popup and let user enter new event data
@@ -322,6 +342,7 @@ class CreateScheduleViewController: UIViewController, ModalDelegate{
             //sorts events in ascending order
             eventsData = eventsData.sorted(by: {$0.startTimeHr! < $1.startTimeHr!})
         }
+        
     }
     
     func deleteEvent(eventsToDelete: EventData){

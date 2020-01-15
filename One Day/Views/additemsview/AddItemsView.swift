@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import PopupDialog
 
 class AddItemsView: UIView {
     

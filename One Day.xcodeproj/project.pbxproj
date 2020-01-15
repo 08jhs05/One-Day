@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,7 +12,6 @@
 		6968B57423C28C3E009A56A1 /* CirclePieView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6968B57323C28C3E009A56A1 /* CirclePieView.xib */; };
 		6968B57823C28C66009A56A1 /* CirclePieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6968B57723C28C66009A56A1 /* CirclePieView.swift */; };
 		6968B57A23C28D12009A56A1 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6968B57923C28D12009A56A1 /* Pie.swift */; };
-		6968B57C23C2C068009A56A1 /* ConstraintManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6968B57B23C2C068009A56A1 /* ConstraintManager.swift */; };
 		6968B57E23C2E294009A56A1 /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6968B57D23C2E294009A56A1 /* EventData.swift */; };
 		6968B58023C2F2D7009A56A1 /* ItemsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6968B57F23C2F2D7009A56A1 /* ItemsTableController.swift */; };
 		6968B58323C3FB8F009A56A1 /* eventItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6968B58223C3FB8F009A56A1 /* eventItemCell.xib */; };
@@ -31,7 +30,6 @@
 		69F3E8C823C010630081B30C /* CreateScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F3E8C723C010630081B30C /* CreateScheduleViewController.swift */; };
 		69F3E8CA23C180FD0081B30C /* AddItemsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69F3E8C923C180FD0081B30C /* AddItemsView.xib */; };
 		69F3E8CD23C181340081B30C /* AddItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F3E8CC23C181340081B30C /* AddItemsView.swift */; };
-		DB0E8086283A42C0C23E5684 /* Pods_One_Day.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36216E2E008E12F1A0710B5A /* Pods_One_Day.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,13 +50,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		36216E2E008E12F1A0710B5A /* Pods_One_Day.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_One_Day.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6949ADDC23CAA1A500EDB01F /* MainMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCell.swift; sourceTree = "<group>"; };
 		6949ADDE23CAA1B000EDB01F /* MainMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenuCell.xib; sourceTree = "<group>"; };
 		6968B57323C28C3E009A56A1 /* CirclePieView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CirclePieView.xib; sourceTree = "<group>"; };
 		6968B57723C28C66009A56A1 /* CirclePieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclePieView.swift; sourceTree = "<group>"; };
 		6968B57923C28D12009A56A1 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
-		6968B57B23C2C068009A56A1 /* ConstraintManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintManager.swift; sourceTree = "<group>"; };
 		6968B57D23C2E294009A56A1 /* EventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
 		6968B57F23C2F2D7009A56A1 /* ItemsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableController.swift; sourceTree = "<group>"; };
 		6968B58223C3FB8F009A56A1 /* eventItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = eventItemCell.xib; sourceTree = "<group>"; };
@@ -83,8 +79,6 @@
 		69F3E8C723C010630081B30C /* CreateScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScheduleViewController.swift; sourceTree = "<group>"; };
 		69F3E8C923C180FD0081B30C /* AddItemsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddItemsView.xib; sourceTree = "<group>"; };
 		69F3E8CC23C181340081B30C /* AddItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemsView.swift; sourceTree = "<group>"; };
-		6EA59CDD5CEE9FB05D8E5CF9 /* Pods-One Day.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-One Day.debug.xcconfig"; path = "Target Support Files/Pods-One Day/Pods-One Day.debug.xcconfig"; sourceTree = "<group>"; };
-		A3E97ADB7E837C0AEADB631F /* Pods-One Day.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-One Day.release.xcconfig"; path = "Target Support Files/Pods-One Day/Pods-One Day.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +86,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB0E8086283A42C0C23E5684 /* Pods_One_Day.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,7 +109,6 @@
 		0FB2B6B4B0E66B150DBA7D3B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				36216E2E008E12F1A0710B5A /* Pods_One_Day.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -156,7 +148,6 @@
 				69F3E8A823BFED2F0081B30C /* One DayTests */,
 				69F3E8B323BFED2F0081B30C /* One DayUITests */,
 				69F3E88D23BFED2B0081B30C /* Products */,
-				F77E0205030AC77E10B6D124 /* Pods */,
 				0FB2B6B4B0E66B150DBA7D3B /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -222,7 +213,6 @@
 			children = (
 				69F3E8C523BFEE9F0081B30C /* DayListViewController.swift */,
 				69F3E8C723C010630081B30C /* CreateScheduleViewController.swift */,
-				6968B57B23C2C068009A56A1 /* ConstraintManager.swift */,
 				6968B58823C43C89009A56A1 /* PopUpViewController.swift */,
 			);
 			path = Controllers;
@@ -247,15 +237,6 @@
 			path = additemsview;
 			sourceTree = "<group>";
 		};
-		F77E0205030AC77E10B6D124 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6EA59CDD5CEE9FB05D8E5CF9 /* Pods-One Day.debug.xcconfig */,
-				A3E97ADB7E837C0AEADB631F /* Pods-One Day.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -263,11 +244,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 69F3E8B923BFED2F0081B30C /* Build configuration list for PBXNativeTarget "One Day" */;
 			buildPhases = (
-				05756F641791C601163C9C70 /* [CP] Check Pods Manifest.lock */,
 				69F3E88823BFED2B0081B30C /* Sources */,
 				69F3E88923BFED2B0081B30C /* Frameworks */,
 				69F3E88A23BFED2B0081B30C /* Resources */,
-				DE8EF211AF7DCB0B0893A8FC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -388,48 +367,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		05756F641791C601163C9C70 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-One Day-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DE8EF211AF7DCB0B0893A8FC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-One Day/Pods-One Day-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-One Day/Pods-One Day-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-One Day/Pods-One Day-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		69F3E88823BFED2B0081B30C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -445,7 +382,6 @@
 				69F3E8C623BFEE9F0081B30C /* DayListViewController.swift in Sources */,
 				6968B58523C3FBA4009A56A1 /* EventItemCell.swift in Sources */,
 				6968B58923C43C89009A56A1 /* PopUpViewController.swift in Sources */,
-				6968B57C23C2C068009A56A1 /* ConstraintManager.swift in Sources */,
 				69F3E89A23BFED2B0081B30C /* One_Day.xcdatamodeld in Sources */,
 				69F3E8CD23C181340081B30C /* AddItemsView.swift in Sources */,
 				6968B57823C28C66009A56A1 /* CirclePieView.swift in Sources */,
@@ -620,12 +556,12 @@
 		};
 		69F3E8BA23BFED2F0081B30C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6EA59CDD5CEE9FB05D8E5CF9 /* Pods-One Day.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GZW87SBZ7C;
 				INFOPLIST_FILE = "One Day/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -633,18 +569,18 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "JayShinApp.One-Day";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		69F3E8BB23BFED2F0081B30C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A3E97ADB7E837C0AEADB631F /* Pods-One Day.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GZW87SBZ7C;
 				INFOPLIST_FILE = "One Day/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -652,7 +588,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "JayShinApp.One-Day";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

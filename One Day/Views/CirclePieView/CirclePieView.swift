@@ -11,8 +11,8 @@ import UIKit
 
 class CirclePieView: UIView{
     
-    @IBOutlet var viewFrame: UIView!
     var events: [Pie] = []
+    var initialframe: CGRect?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -26,16 +26,19 @@ class CirclePieView: UIView{
 
     func initSubviews() {
         // standard initialization logic
-        let nib = UINib(nibName: "CirclePieView", bundle: nil)
-        nib.instantiate(withOwner: self, options: nil)
-        viewFrame.frame = bounds
-        addSubview(viewFrame)
-
+//        let nib = UINib(nibName: "CirclePieView", bundle: nil)
+//        nib.instantiate(withOwner: self, options: nil)
+        
+        initialframe = CGRect(x: 0, y: 0, width: self.frame.height, height: self.frame.height)
+        self.frame = initialframe!
     }
     
     func addNewSchedule(startTimeHrParam: Int16, startTime: Float, endTime: Float, pieColor: UIColor, name: String){
-        let newSchedule = Pie(frameSuper: viewFrame.frame, startTimeHr: startTimeHrParam, radius: viewFrame.frame.width/2, startAngle: CGFloat(360.0*startTime/24.0), endAngle: CGFloat(360.0*endTime/24.0), centerPoint: CGPoint(x: frame.width/2, y: frame.height/2), color: pieColor, name: name)
         
+        //self.frame = CGRect(x: 0, y: 0, width: self.frame.height, height: self.frame.height)
+        
+        let newSchedule = Pie(frameSuper: initialframe!, startTimeHr: startTimeHrParam, radius: initialframe!.width/2.0, startAngle: CGFloat(360.0*startTime/24.0), endAngle: CGFloat(360.0*endTime/24.0), centerPoint: CGPoint(x: initialframe!.width/2.0, y: initialframe!.height/2.0), color: pieColor, name: name)
+
         //print(String(format:"float: %f  angle: %f", startTime, CGFloat(360.0*startTime/24.0)))
         
         events.append(newSchedule)
@@ -51,10 +54,9 @@ class CirclePieView: UIView{
     }
     
     override func draw(_ rect: CGRect) {
-        let path = UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: bounds.size.height, height: bounds.size.height))
+        let path = UIBezierPath(ovalIn: initialframe!)
         
         UIColor(red: 246.0/255.0, green: 114.0/255.0, blue: 128.0/255.0, alpha: 1.0).setFill()
         path.fill()
-
     }
 }

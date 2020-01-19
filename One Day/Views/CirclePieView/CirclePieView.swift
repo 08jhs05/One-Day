@@ -22,6 +22,7 @@ class CirclePieView: UIView{
     override init(frame: CGRect) {
         super.init(frame: frame)
         initSubviews()
+        
     }
 
     func initSubviews() {
@@ -39,8 +40,6 @@ class CirclePieView: UIView{
         
         let newSchedule = Pie(frameSuper: initialframe!, startTimeHr: startTimeHrParam, radius: initialframe!.width/2.0, startAngle: CGFloat(360.0*startTime/24.0), endAngle: CGFloat(360.0*endTime/24.0), centerPoint: CGPoint(x: initialframe!.width/2.0, y: initialframe!.height/2.0), color: pieColor, name: name)
 
-        //print(String(format:"float: %f  angle: %f", startTime, CGFloat(360.0*startTime/24.0)))
-        
         events.append(newSchedule)
         self.addSubview(newSchedule)
         
@@ -51,6 +50,10 @@ class CirclePieView: UIView{
         for subview in subviews {
             subview.removeFromSuperview()
         }
+    }
+    
+    func changeWidth(newWidth: Int){
+        initialframe = CGRect(x: 0, y: 0, width: newWidth, height: newWidth)
     }
     
     override func draw(_ rect: CGRect) {

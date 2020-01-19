@@ -9,11 +9,9 @@
 /* Begin PBXBuildFile section */
 		6949ADDD23CAA1A500EDB01F /* MainMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6949ADDC23CAA1A500EDB01F /* MainMenuCell.swift */; };
 		6949ADDF23CAA1B000EDB01F /* MainMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6949ADDE23CAA1B000EDB01F /* MainMenuCell.xib */; };
-		6968B57423C28C3E009A56A1 /* CirclePieView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6968B57323C28C3E009A56A1 /* CirclePieView.xib */; };
 		6968B57823C28C66009A56A1 /* CirclePieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6968B57723C28C66009A56A1 /* CirclePieView.swift */; };
 		6968B57A23C28D12009A56A1 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6968B57923C28D12009A56A1 /* Pie.swift */; };
 		6968B57E23C2E294009A56A1 /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6968B57D23C2E294009A56A1 /* EventData.swift */; };
-		6968B58023C2F2D7009A56A1 /* ItemsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6968B57F23C2F2D7009A56A1 /* ItemsTableController.swift */; };
 		6968B58323C3FB8F009A56A1 /* eventItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6968B58223C3FB8F009A56A1 /* eventItemCell.xib */; };
 		6968B58523C3FBA4009A56A1 /* EventItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6968B58423C3FBA4009A56A1 /* EventItemCell.swift */; };
 		6968B58723C437B7009A56A1 /* AlwaysPopupSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6968B58623C437B6009A56A1 /* AlwaysPopupSegue.swift */; };
@@ -52,16 +50,14 @@
 /* Begin PBXFileReference section */
 		6949ADDC23CAA1A500EDB01F /* MainMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCell.swift; sourceTree = "<group>"; };
 		6949ADDE23CAA1B000EDB01F /* MainMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenuCell.xib; sourceTree = "<group>"; };
-		6968B57323C28C3E009A56A1 /* CirclePieView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CirclePieView.xib; sourceTree = "<group>"; };
 		6968B57723C28C66009A56A1 /* CirclePieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclePieView.swift; sourceTree = "<group>"; };
 		6968B57923C28D12009A56A1 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
 		6968B57D23C2E294009A56A1 /* EventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
-		6968B57F23C2F2D7009A56A1 /* ItemsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableController.swift; sourceTree = "<group>"; };
 		6968B58223C3FB8F009A56A1 /* eventItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = eventItemCell.xib; sourceTree = "<group>"; };
 		6968B58423C3FBA4009A56A1 /* EventItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventItemCell.swift; sourceTree = "<group>"; };
 		6968B58623C437B6009A56A1 /* AlwaysPopupSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlwaysPopupSegue.swift; path = "One Day/Views/AlwaysPopupSegue.swift"; sourceTree = SOURCE_ROOT; };
 		6968B58823C43C89009A56A1 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
-		69F3E88C23BFED2B0081B30C /* One Day.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "One Day.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		69F3E88C23BFED2B0081B30C /* Pie Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pie Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69F3E88F23BFED2B0081B30C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69F3E89123BFED2B0081B30C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		69F3E89623BFED2B0081B30C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -69,10 +65,10 @@
 		69F3E89B23BFED2E0081B30C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		69F3E89E23BFED2E0081B30C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		69F3E8A023BFED2E0081B30C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		69F3E8A523BFED2F0081B30C /* One DayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "One DayTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		69F3E8A523BFED2F0081B30C /* Pie PlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pie PlannerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69F3E8A923BFED2F0081B30C /* One_DayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = One_DayTests.swift; sourceTree = "<group>"; };
 		69F3E8AB23BFED2F0081B30C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		69F3E8B023BFED2F0081B30C /* One DayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "One DayUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		69F3E8B023BFED2F0081B30C /* Pie PlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pie PlannerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69F3E8B423BFED2F0081B30C /* One_DayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = One_DayUITests.swift; sourceTree = "<group>"; };
 		69F3E8B623BFED2F0081B30C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69F3E8C523BFEE9F0081B30C /* DayListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayListViewController.swift; sourceTree = "<group>"; };
@@ -125,7 +121,6 @@
 		6968B57223C28C23009A56A1 /* CirclePieView */ = {
 			isa = PBXGroup;
 			children = (
-				6968B57323C28C3E009A56A1 /* CirclePieView.xib */,
 				6968B57723C28C66009A56A1 /* CirclePieView.swift */,
 				6968B57923C28D12009A56A1 /* Pie.swift */,
 			);
@@ -155,9 +150,9 @@
 		69F3E88D23BFED2B0081B30C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				69F3E88C23BFED2B0081B30C /* One Day.app */,
-				69F3E8A523BFED2F0081B30C /* One DayTests.xctest */,
-				69F3E8B023BFED2F0081B30C /* One DayUITests.xctest */,
+				69F3E88C23BFED2B0081B30C /* Pie Planner.app */,
+				69F3E8A523BFED2F0081B30C /* Pie PlannerTests.xctest */,
+				69F3E8B023BFED2F0081B30C /* Pie PlannerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -231,7 +226,6 @@
 			isa = PBXGroup;
 			children = (
 				69F3E8C923C180FD0081B30C /* AddItemsView.xib */,
-				6968B57F23C2F2D7009A56A1 /* ItemsTableController.swift */,
 				69F3E8CC23C181340081B30C /* AddItemsView.swift */,
 			);
 			path = additemsview;
@@ -240,9 +234,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		69F3E88B23BFED2B0081B30C /* One Day */ = {
+		69F3E88B23BFED2B0081B30C /* Pie Planner */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 69F3E8B923BFED2F0081B30C /* Build configuration list for PBXNativeTarget "One Day" */;
+			buildConfigurationList = 69F3E8B923BFED2F0081B30C /* Build configuration list for PBXNativeTarget "Pie Planner" */;
 			buildPhases = (
 				69F3E88823BFED2B0081B30C /* Sources */,
 				69F3E88923BFED2B0081B30C /* Frameworks */,
@@ -252,14 +246,14 @@
 			);
 			dependencies = (
 			);
-			name = "One Day";
+			name = "Pie Planner";
 			productName = "One Day";
-			productReference = 69F3E88C23BFED2B0081B30C /* One Day.app */;
+			productReference = 69F3E88C23BFED2B0081B30C /* Pie Planner.app */;
 			productType = "com.apple.product-type.application";
 		};
-		69F3E8A423BFED2F0081B30C /* One DayTests */ = {
+		69F3E8A423BFED2F0081B30C /* Pie PlannerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 69F3E8BC23BFED2F0081B30C /* Build configuration list for PBXNativeTarget "One DayTests" */;
+			buildConfigurationList = 69F3E8BC23BFED2F0081B30C /* Build configuration list for PBXNativeTarget "Pie PlannerTests" */;
 			buildPhases = (
 				69F3E8A123BFED2F0081B30C /* Sources */,
 				69F3E8A223BFED2F0081B30C /* Frameworks */,
@@ -270,14 +264,14 @@
 			dependencies = (
 				69F3E8A723BFED2F0081B30C /* PBXTargetDependency */,
 			);
-			name = "One DayTests";
+			name = "Pie PlannerTests";
 			productName = "One DayTests";
-			productReference = 69F3E8A523BFED2F0081B30C /* One DayTests.xctest */;
+			productReference = 69F3E8A523BFED2F0081B30C /* Pie PlannerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		69F3E8AF23BFED2F0081B30C /* One DayUITests */ = {
+		69F3E8AF23BFED2F0081B30C /* Pie PlannerUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 69F3E8BF23BFED2F0081B30C /* Build configuration list for PBXNativeTarget "One DayUITests" */;
+			buildConfigurationList = 69F3E8BF23BFED2F0081B30C /* Build configuration list for PBXNativeTarget "Pie PlannerUITests" */;
 			buildPhases = (
 				69F3E8AC23BFED2F0081B30C /* Sources */,
 				69F3E8AD23BFED2F0081B30C /* Frameworks */,
@@ -288,9 +282,9 @@
 			dependencies = (
 				69F3E8B223BFED2F0081B30C /* PBXTargetDependency */,
 			);
-			name = "One DayUITests";
+			name = "Pie PlannerUITests";
 			productName = "One DayUITests";
-			productReference = 69F3E8B023BFED2F0081B30C /* One DayUITests.xctest */;
+			productReference = 69F3E8B023BFED2F0081B30C /* Pie PlannerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -316,7 +310,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 69F3E88723BFED2B0081B30C /* Build configuration list for PBXProject "One Day" */;
+			buildConfigurationList = 69F3E88723BFED2B0081B30C /* Build configuration list for PBXProject "Pie Planner" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -329,9 +323,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				69F3E88B23BFED2B0081B30C /* One Day */,
-				69F3E8A423BFED2F0081B30C /* One DayTests */,
-				69F3E8AF23BFED2F0081B30C /* One DayUITests */,
+				69F3E88B23BFED2B0081B30C /* Pie Planner */,
+				69F3E8A423BFED2F0081B30C /* Pie PlannerTests */,
+				69F3E8AF23BFED2F0081B30C /* Pie PlannerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -346,7 +340,6 @@
 				69F3E89723BFED2B0081B30C /* Main.storyboard in Resources */,
 				6968B58323C3FB8F009A56A1 /* eventItemCell.xib in Resources */,
 				69F3E8CA23C180FD0081B30C /* AddItemsView.xib in Resources */,
-				6968B57423C28C3E009A56A1 /* CirclePieView.xib in Resources */,
 				6949ADDF23CAA1B000EDB01F /* MainMenuCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,7 +368,6 @@
 				69F3E8C823C010630081B30C /* CreateScheduleViewController.swift in Sources */,
 				69F3E89023BFED2B0081B30C /* AppDelegate.swift in Sources */,
 				6968B57E23C2E294009A56A1 /* EventData.swift in Sources */,
-				6968B58023C2F2D7009A56A1 /* ItemsTableController.swift in Sources */,
 				6968B57A23C28D12009A56A1 /* Pie.swift in Sources */,
 				6968B58723C437B7009A56A1 /* AlwaysPopupSegue.swift in Sources */,
 				69F3E89223BFED2B0081B30C /* SceneDelegate.swift in Sources */,
@@ -410,12 +402,12 @@
 /* Begin PBXTargetDependency section */
 		69F3E8A723BFED2F0081B30C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 69F3E88B23BFED2B0081B30C /* One Day */;
+			target = 69F3E88B23BFED2B0081B30C /* Pie Planner */;
 			targetProxy = 69F3E8A623BFED2F0081B30C /* PBXContainerItemProxy */;
 		};
 		69F3E8B223BFED2F0081B30C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 69F3E88B23BFED2B0081B30C /* One Day */;
+			target = 69F3E88B23BFED2B0081B30C /* Pie Planner */;
 			targetProxy = 69F3E8B123BFED2F0081B30C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -490,7 +482,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -544,7 +536,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -567,7 +559,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "JayShinApp.One-Day";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Pie Planner";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -586,7 +578,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "JayShinApp.One-Day";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Pie Planner";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -610,7 +602,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/One Day.app/One Day";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pie Planner.app/Pie Planner";
 			};
 			name = Debug;
 		};
@@ -632,7 +624,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/One Day.app/One Day";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pie Planner.app/Pie Planner";
 			};
 			name = Release;
 		};
@@ -679,7 +671,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		69F3E88723BFED2B0081B30C /* Build configuration list for PBXProject "One Day" */ = {
+		69F3E88723BFED2B0081B30C /* Build configuration list for PBXProject "Pie Planner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				69F3E8B723BFED2F0081B30C /* Debug */,
@@ -688,7 +680,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		69F3E8B923BFED2F0081B30C /* Build configuration list for PBXNativeTarget "One Day" */ = {
+		69F3E8B923BFED2F0081B30C /* Build configuration list for PBXNativeTarget "Pie Planner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				69F3E8BA23BFED2F0081B30C /* Debug */,
@@ -697,7 +689,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		69F3E8BC23BFED2F0081B30C /* Build configuration list for PBXNativeTarget "One DayTests" */ = {
+		69F3E8BC23BFED2F0081B30C /* Build configuration list for PBXNativeTarget "Pie PlannerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				69F3E8BD23BFED2F0081B30C /* Debug */,
@@ -706,7 +698,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		69F3E8BF23BFED2F0081B30C /* Build configuration list for PBXNativeTarget "One DayUITests" */ = {
+		69F3E8BF23BFED2F0081B30C /* Build configuration list for PBXNativeTarget "Pie PlannerUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				69F3E8C023BFED2F0081B30C /* Debug */,

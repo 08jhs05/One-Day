@@ -47,6 +47,8 @@ class CreateScheduleViewController: UIViewController, ModalDelegate{
     @IBOutlet weak var circleView: CirclePieView!
     @IBOutlet weak var clockView: UIView!
     
+    @IBOutlet weak var readings: UIImageView!
+    @IBOutlet weak var eventsTable: UITableView!
     //constraints
     
     @IBOutlet weak var clockviewtop: NSLayoutConstraint!
@@ -83,6 +85,11 @@ class CreateScheduleViewController: UIViewController, ModalDelegate{
         eventList.dataSource = self
         eventList.register(UINib(nibName: "eventItemCell", bundle: nil), forCellReuseIdentifier: "eventItemCell")
         
+
+        circleView.changeWidth(newWidth: Int(UIScreen.main.bounds.width-90.0))
+        eventsTable.frame = CGRect(x: eventsTable.frame.origin.x, y: eventsTable.frame.origin.y, width: UIScreen.main.bounds.width-64.0, height: eventsTable.frame.height)
+
+        
         load()
         titleText = delegate?.parentTitle
 
@@ -101,12 +108,13 @@ class CreateScheduleViewController: UIViewController, ModalDelegate{
         else {
             alarmBtn.image = UIImage(systemName: "bell")
         }
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        eventsTable.frame = CGRect(x: eventsTable.frame.origin.x, y: eventsTable.frame.origin.y, width: UIScreen.main.bounds.width-64.0, height: eventsTable.frame.height)
+
         load()
     }
     
@@ -343,6 +351,8 @@ class CreateScheduleViewController: UIViewController, ModalDelegate{
             eventsData = eventsData.sorted(by: {$0.startTimeHr! < $1.startTimeHr!})
         }
         
+        //print(circleView.bounds.width)
+
     }
     
     func deleteEvent(eventsToDelete: EventData){
@@ -380,7 +390,7 @@ extension CreateScheduleViewController: UITableViewDelegate, UITableViewDataSour
         
         let event = eventsData[indexPath.row]
         let cell = self.eventList.dequeueReusableCell(withIdentifier: "eventItemCell") as! EventItemCell
-        
+    
         cell.fillContents(
             piecolor: event.pieColor!,
             startTimeHr: Int(event.startTimeHr!),

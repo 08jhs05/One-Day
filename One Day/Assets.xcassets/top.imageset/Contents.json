@@ -2,12 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "appicon.png",
+      "filename" : "top.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "appicon-1.png",
       "scale" : "2x"
     },
     {

@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--ONE DAY-->
+        <!--PIE PLANNER-->
         <scene sceneID="UnE-MB-XLd">
             <objects>
-                <tableViewController id="FMR-K7-aYI" customClass="DayListViewController" customModule="One_Day" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="FMR-K7-aYI" customClass="DayListViewController" customModule="Pie_Planner" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Vmd-Q5-fiX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,7 +30,7 @@
                             <outlet property="delegate" destination="FMR-K7-aYI" id="FIV-2x-PGW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="ONE DAY" id="YK0-u4-9T8">
+                    <navigationItem key="navigationItem" title="PIE PLANNER" id="YK0-u4-9T8">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="info.circle" catalog="system" style="plain" id="cJy-Gl-Rad"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="Dqg-ru-umO">
                             <connections>
@@ -49,7 +49,7 @@
         <!--schedule-->
         <scene sceneID="nFr-jG-wpf">
             <objects>
-                <viewController id="7Bc-ps-Asr" userLabel="schedule" customClass="CreateScheduleViewController" customModule="One_Day" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7Bc-ps-Asr" userLabel="schedule" customClass="CreateScheduleViewController" customModule="Pie_Planner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="YpL-Fq-acJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -148,7 +148,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Zgo-3Q-Ti8" customClass="EventItemCell" customModule="One_Day" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Zgo-3Q-Ti8" customClass="EventItemCell" customModule="Pie_Planner" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="350" height="44"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zgo-3Q-Ti8" id="8We-rZ-oON">
@@ -184,7 +184,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ERu-IU-BRj" userLabel="clock view">
                                 <rect key="frame" x="15" y="168" width="384" height="384"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tsI-qb-N4U" customClass="CirclePieView" customModule="One_Day" customModuleProvider="target">
+                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tsI-qb-N4U" customClass="CirclePieView" customModule="Pie_Planner" customModuleProvider="target">
                                         <rect key="frame" x="30" y="30" width="324" height="324"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -246,12 +246,14 @@
                         <outlet property="collapseBtn" destination="89H-Cg-wr3" id="eid-Ca-n2l"/>
                         <outlet property="editBtn" destination="45n-zX-BiE" id="nNR-q1-pYg"/>
                         <outlet property="eventList" destination="UlP-0v-UWN" id="1zK-K9-CLs"/>
+                        <outlet property="eventsTable" destination="UlP-0v-UWN" id="En1-hB-Okt"/>
                         <outlet property="expandBtn" destination="T3B-rE-g9T" id="FTY-lw-3Nk"/>
+                        <outlet property="readings" destination="uHY-Ht-aVo" id="c58-84-Gzb"/>
                         <outlet property="removeItemBtn" destination="ACr-kn-Zhx" id="zzU-9f-uVO"/>
                         <outlet property="scheduleList" destination="ODG-hB-rGp" id="3t8-Et-ybr"/>
                         <outlet property="scheduleListInner" destination="bF9-ie-ByG" id="uyc-8q-RJB"/>
                         <outlet property="titletextfield" destination="w1C-4n-08u" id="ogd-tJ-9Ik"/>
-                        <segue destination="lsf-Sc-DEw" kind="presentation" identifier="addNewItem" customClass="AlwaysPopupSegue" customModule="One_Day" customModuleProvider="target" id="Yt8-7h-UPH"/>
+                        <segue destination="lsf-Sc-DEw" kind="presentation" identifier="addNewItem" customClass="AlwaysPopupSegue" customModule="Pie_Planner" customModuleProvider="target" id="Yt8-7h-UPH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0RM-nY-yO1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -261,7 +263,7 @@
         <!--Popup-->
         <scene sceneID="5RK-Ok-eOO">
             <objects>
-                <viewController title="Popup" modalPresentationStyle="pageSheet" id="lsf-Sc-DEw" customClass="PopUpViewController" customModule="One_Day" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Popup" modalPresentationStyle="pageSheet" id="lsf-Sc-DEw" customClass="PopUpViewController" customModule="Pie_Planner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mMz-at-YhM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -270,14 +272,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYV-4u-Cmn">
-                                        <rect key="frame" x="148.33333333333334" y="21.333333333333332" width="117.66666666666666" height="32.666666666666671"/>
-                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="28"/>
+                                        <rect key="frame" x="154" y="23.333333333333329" width="106.33333333333331" height="28.666666666666671"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8WJ-ko-MW2">
-                                        <rect key="frame" x="344" y="18" width="48" height="39"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <rect key="frame" x="349" y="19.666666666666671" width="43" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Save">
                                             <color key="titleColor" red="0.99762529134750366" green="0.94011646509170532" blue="0.81601136922836304" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -286,8 +288,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N4o-X8-xsO">
-                                        <rect key="frame" x="22" y="18" width="67" height="39"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <rect key="frame" x="22" y="19.666666666666671" width="61" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Cancel">
                                             <color key="titleColor" red="0.99762529134750366" green="0.94011646509170532" blue="0.81601136922836304" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>

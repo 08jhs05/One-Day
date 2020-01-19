@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -21,12 +21,28 @@
                                     <constraint firstAttribute="width" secondItem="lob-7b-yf1" secondAttribute="height" multiplier="1:1" id="BYV-2H-05Y"/>
                                 </constraints>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="bew-OQ-Mqb">
+                                <rect key="frame" x="0.0" y="655" width="414" height="207"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top" translatesAutoresizingMaskIntoConstraints="NO" id="o88-LP-KY0">
+                                <rect key="frame" x="0.0" y="44" width="414" height="197"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="lob-7b-yf1" firstAttribute="top" secondItem="o88-LP-KY0" secondAttribute="bottom" id="0ku-N6-vgz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="o88-LP-KY0" secondAttribute="trailing" id="3ul-vE-KiH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bew-OQ-Mqb" secondAttribute="bottom" id="9jR-XW-sbY"/>
+                            <constraint firstItem="bew-OQ-Mqb" firstAttribute="top" secondItem="lob-7b-yf1" secondAttribute="bottom" id="KZe-Uq-5rs"/>
                             <constraint firstItem="lob-7b-yf1" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="PBW-kI-Ps0"/>
+                            <constraint firstItem="bew-OQ-Mqb" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="PFx-VB-b7b"/>
+                            <constraint firstItem="bew-OQ-Mqb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Vn1-OE-5q6"/>
+                            <constraint firstItem="o88-LP-KY0" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="dnq-xh-cLZ"/>
                             <constraint firstAttribute="trailing" secondItem="lob-7b-yf1" secondAttribute="trailing" id="ka2-Xh-5kE"/>
                             <constraint firstItem="lob-7b-yf1" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="lg0-aL-7BD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bew-OQ-Mqb" secondAttribute="trailing" id="p5T-07-7qi"/>
+                            <constraint firstItem="o88-LP-KY0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pTK-h2-1H4"/>
+                            <constraint firstItem="o88-LP-KY0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="slC-Qe-BIO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -37,6 +53,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bottom" width="600" height="600"/>
         <image name="logo" width="512" height="512"/>
+        <image name="top" width="600" height="600"/>
     </resources>
 </document>

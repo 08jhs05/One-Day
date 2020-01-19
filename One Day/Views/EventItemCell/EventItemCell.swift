@@ -17,6 +17,7 @@ class EventItemCell: UITableViewCell{
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+
     }
     
     func fillContents(piecolor: UIColor, startTimeHr:Int, startTimeMin:Int, endTimeHr:Int, endTimeMin:Int, eventName: String){

@@ -7,7 +7,7 @@
 </div>
 
 
-Pie planner is a schedule planner app with intuitive pie chart. Users can easily add, edit, delete events on the pie chart to plan a day.
+Pie planner is a schedule planner app with an intuitive pie chart. Users can easily add, edit, delete events on the pie chart to plan a day.
 
 available on Apple Appstore! https://apps.apple.com/gb/app/pie-planner/id1495555553
 
